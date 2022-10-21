@@ -1852,6 +1852,8 @@ public class RadioResponse extends IRadioResponse.Stub {
         if (rr != null) {
             IccCardStatus iccCardStatus = RILUtils.convertHalCardStatus(cardStatus.base.base);
             IccSlotPortMapping slotPortMapping = new IccSlotPortMapping();
+            iccCardStatus.mSlotPortMapping = slotPortMapping;
+            IccSlotPortMapping slotPortMapping = new IccSlotPortMapping();
             slotPortMapping.mPhysicalSlotIndex = cardStatus.base.physicalSlotId;
             iccCardStatus.mSlotPortMapping = slotPortMapping;
             iccCardStatus.atr = cardStatus.base.atr;
